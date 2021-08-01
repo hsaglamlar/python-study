@@ -1,0 +1,6 @@
+deposit = 1000
+profit = 1.07
+days = 7
+
+total = deposit*(profit**days)
+print (total)
