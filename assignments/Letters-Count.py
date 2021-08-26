@@ -3,5 +3,4 @@ sentence = input("Please enter a sentence :")
 counts={}
 for item in sentence:
     counts[item] = sentence.count(item)
-
 print(counts)

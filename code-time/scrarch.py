@@ -80,13 +80,34 @@
 # print("En küçük zengin tek sayı :", zengin_liste[0][1])
 
 
-mukemmel=[]
-for i in range(2,500):
-    sum = 0
-    for j in range(1,i):
-        if i%j == 0:
-            sum +=j
-    if sum == i:
-        mukemmel.append(i)
-print(mukemmel)
-#[6, 28, 496]
+# mukemmel=[]
+# for i in range(2,500):
+#     sum = 0
+#     for j in range(1,i):
+#         if i%j == 0:
+#             sum +=j
+#     if sum == i:
+#         mukemmel.append(i)
+# print(mukemmel)
+# #[6, 28, 496]
+
+
+
+def bounce_ball(h,window,bounce):
+    if not (0<bounce<1) or h <=0 or window >= h:
+        return -1
+    else:
+        result = 0    
+        while True:
+            h_next = h * bounce
+            if h > window:
+                result += 1
+            if h_next> window:
+                result +=1
+            else:
+                break
+            h = h_next
+        return result
+
+print(bounce_ball(3,1.5,0.66))
+
