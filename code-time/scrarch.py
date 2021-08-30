@@ -93,21 +93,46 @@
 
 
 
-def bounce_ball(h,window,bounce):
-    if not (0<bounce<1) or h <=0 or window >= h:
-        return -1
-    else:
-        result = 0    
-        while True:
-            h_next = h * bounce
-            if h > window:
-                result += 1
-            if h_next> window:
-                result +=1
-            else:
-                break
-            h = h_next
-        return result
+# def bounce_ball(h,window,bounce):
+#     if not (0<bounce<1) or h <=0 or window >= h:
+#         return -1
+#     else:
+#         result = 0    
+#         while True:
+#             h_next = h * bounce
+#             if h > window:
+#                 result += 1
+#             if h_next> window:
+#                 result +=1
+#             else:
+#                 break
+#             h = h_next
+#         return result
 
-print(bounce_ball(3,1.5,0.66))
+# print(bounce_ball(3,1.5,0.66))
 
+
+# list1 = ["Mike", "", "Alice", "Jerry", "", "Tom"]
+# list2 = filter(lambda x: x !="",list1)
+# print(*list2)
+
+
+# list1 = [[1,4,5], [4], [46,7,3],[7,3]]
+# temp = []
+# for item in list1:
+#     temp.extend(item)
+# print(sum(temp))
+
+
+
+
+# terrain = [0,1,0,2,1,0,1,3,2,1,2,1]
+
+# total_water = 0
+# for width in range(2,len(terrain) -1):
+#     for i in range(len(terrain) - width):
+#         chunk = terrain[i:i+width+1]
+#         if all(element < chunk[0] for element in chunk[1:-1]) and all(element < chunk[-1] for element in chunk[1:-1]):
+#             total_water += (width-1)
+
+# print(total_water)
