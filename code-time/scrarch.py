@@ -136,3 +136,30 @@
 #             total_water += (width-1)
 
 # print(total_water)
+
+# import numpy as np
+
+# aaa = np.arange(30).reshape((5,6))
+# aaa2= np.array(aaa)
+# print(aaa2.size, aaa2.shape, aaa2.dtype, aaa2.itemsize)
+# b= np.concatenate((aaa2,aaa),0)
+# print(b)
+# c=aaa.
+# print(c)
+
+def subset(liste, k):
+    res = [[]]
+    resa = []
+    for i in liste:
+        for j in res:
+            res = res + [j + [i]]
+            if sum(res[-1]) == k:
+                if res[-1] not in resa:
+                    resa.append(res[-1])
+    if resa == []:
+        return 'Null'
+    else:
+        return resa # tum sonuclar icin
+       # return resa[-1] tek sonuc icin
+        
+subset([1,3,5,12,15,7,8,23,9], 24)
