@@ -6,14 +6,14 @@
 #         if len(closed_list)==0 and ends.get(item):
 #             closed_list.append(ends[item])
 #             continue
-        
+
 #         if len(closed_list)>0 and item == closed_list[-1] :
 #             closed_list.pop()
 #         elif ends.get(item):
 #             closed_list.append(ends[item])
 #         else:
 #             return False
-    
+
 #     if len(closed_list)>0:
 #         return False
 #     else:
@@ -33,13 +33,13 @@
 #             A[N - 1 - j][i] = A[N - 1 - i][N - 1 - j]
 #             A[N - 1 - i][N - 1 - j] = A[j][N - 1 - i]
 #             A[j][N - 1 - i] = temp
- 
+
 # # Function to print the matrix
 # def printMatrix(A):
 #     N = len(A[0])
 #     for i in range(N):
 #         print(A[i])
- 
+
 # # Driver code
 # A = [[1, 2, 3, 4],
 #      [5, 6, 7, 8],
@@ -47,7 +47,7 @@
 #      [13, 14, 15, 16]]
 # rotate90Clockwise(A)
 # printMatrix(A)
- 
+
 # # This code was contributed
 # # by pk_tautolo
 
@@ -55,7 +55,7 @@
 # seed = 1
 # check = True
 # while check:
-#     count = seed    
+#     count = seed
 #     step = 0
 #     while count < num:
 #         count = count + int(str(count)[::-1])
@@ -64,9 +64,8 @@
 #             check = False
 #             break
 #     if check : seed += 1
-    
-# print(f"seed : {seed} in {step} steps")
 
+# print(f"seed : {seed} in {step} steps")
 
 
 # zengin_liste=[]
@@ -92,12 +91,11 @@
 # #[6, 28, 496]
 
 
-
 # def bounce_ball(h,window,bounce):
 #     if not (0<bounce<1) or h <=0 or window >= h:
 #         return -1
 #     else:
-#         result = 0    
+#         result = 0
 #         while True:
 #             h_next = h * bounce
 #             if h > window:
@@ -124,8 +122,6 @@
 # print(sum(temp))
 
 
-
-
 # terrain = [0,1,0,2,1,0,1,3,2,1,2,1]
 
 # total_water = 0
@@ -147,19 +143,87 @@
 # c=aaa.
 # print(c)
 
-def subset(liste, k):
-    res = [[]]
-    resa = []
-    for i in liste:
-        for j in res:
-            res = res + [j + [i]]
-            if sum(res[-1]) == k:
-                if res[-1] not in resa:
-                    resa.append(res[-1])
-    if resa == []:
-        return 'Null'
-    else:
-        return resa # tum sonuclar icin
-       # return resa[-1] tek sonuc icin
+
+# def subset(liste, k):
+#     res = [[]]
+#     resa = []
+#     for i in liste:
+#         for j in res:
+#             res = res + [j + [i]]
+#             if sum(res[-1]) == k:
+#                 if res[-1] not in resa:
+#                     resa.append(res[-1])
+#     if resa == []:
+#         return 'Null'
+#     else:
+#         return resa # tum sonuclar icin
+#        # return resa[-1] tek sonuc icin
+
+# subset([1,3,5,12,15,7,8,23,9], 24)
+
+
+# with open('code-time/file.txt') as f:
+#     N = int(f.readline())
+#     res = []
+#     for _ in range(N):
+#         fun, *attr = f.readline().split()
+#         if len(attr) == 2:
+#             eval("res." + fun + "(" + attr[0] + "," + attr[1] + ")")
+#         elif len(attr) == 1:
+#             eval("res." + fun + "(" + attr[0] + ")")
+#         elif fun == "print":
+#             print(res)
+#         else:
+#             eval("res." + fun + "()")
+
+
+
+
+# import itertools
+
+# with open('code-time/file.txt') as f:
+#     k, m = map(int, f.readline().split())
+#     nums = []
+#     for _ in range(k):
+#         integer_list = map(int, f.readline().split())
+#         nums.append(list(integer_list))
+#     sum_max = 0
+#     for combination in itertools.product(*nums):
+#         temp = 0
+#         for item in combination:
+#             temp += item**2
+#         if (temp%m) > sum_max:
+#             sum_max = temp%m
+    
+#     print(sum_max)
+
+
+# def print_rangoli(size):
+#     # your code goes here
+#     text = "abcdefghijklmnopqrstuvwxyz"
+    
+#     for i in range(size):
+#         print( "-".join(list(text[size-1:size-1-i:-1])).rjust(size*2- 3,"-") + 
+#         "-" + text[size-1-i] + "-" +
+#         "-".join(list(text[size-i:size:])).ljust(size*2 -3,"-"))
         
-subset([1,3,5,12,15,7,8,23,9], 24)
+#     for i in range(size-2,-1,-1):
+#         print( "-".join(list(text[size-1:size-1-i:-1])).rjust(size*2- 3,"-") + 
+#         "-" + text[size-1-i] + "-" +
+#         "-".join(list(text[size-i:size:])).ljust(size*2 -3,"-")
+#                  )
+
+# if __name__ == '__main__':
+#     # n = int(input())
+#     print_rangoli(1)
+
+
+
+def merge_the_tools(string, k):
+    # your code goes here
+    for i in range(len(string)//k):
+        print( "".join(set(string[i*k:(i+1)*k])) )
+
+if __name__ == '__main__':
+    string, k = 'AABCAAADA', 1
+    merge_the_tools(string, k)
