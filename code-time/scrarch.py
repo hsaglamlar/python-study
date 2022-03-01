@@ -219,11 +219,54 @@
 
 
 
-def merge_the_tools(string, k):
-    # your code goes here
-    for i in range(len(string)//k):
-        print( "".join(set(string[i*k:(i+1)*k])) )
+# def merge_the_tools(string, k):
+#     # your code goes here
+#     for i in range(len(string)//k):
+#         print( "".join(set(string[i*k:(i+1)*k])) )
 
-if __name__ == '__main__':
-    string, k = 'AABCAAADA', 1
-    merge_the_tools(string, k)
+# if __name__ == '__main__':
+#     string, k = 'AABCAAADA', 1
+#     merge_the_tools(string, k)
+
+
+# import calendar
+
+# print(calendar.weekday(*[2022,2,25]))
+# print(calendar.day_name[4])
+
+# from datetime import datetime
+
+# t1 = datetime.strptime("Sun 10 May 2015 13:54:36 -0700","%a %d %b %Y %H:%M:%S %z")
+# print(t1)
+
+
+
+
+# usernames = ["foo","bar","baz"]
+# total = []
+# for item in usernames:
+#     res="NO"
+#     for i in range(len(item)-1):
+#         a = map(lambda x,y: ord(x) > ord(y), item[i],item[i+1:])
+#         print()
+#         if bool(list(a)[0]) :
+#             res="YES"
+#             break
+               
+
+#     total.append(res)
+        
+# print(total)
+
+dictionary = ['hack', 'a', 'rank', 'khac', 'ackh', 'kran', 'rankhacker', 'a', 'ab', 'ba', 'stairs', 'raits']
+query = ["a", "nark", "bs", "hack", "stair"]
+
+dict_list = ["".join(sorted(item)) for item in dictionary]
+
+q_list = ["".join(sorted(item)) for item in query]
+
+res=[]
+for q in q_list:
+    temp=[1 for d in dict_list if q==d ]
+    res.append(sum(temp))
+print(res)
