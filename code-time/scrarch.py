@@ -258,15 +258,31 @@
         
 # print(total)
 
-dictionary = ['hack', 'a', 'rank', 'khac', 'ackh', 'kran', 'rankhacker', 'a', 'ab', 'ba', 'stairs', 'raits']
-query = ["a", "nark", "bs", "hack", "stair"]
 
-dict_list = ["".join(sorted(item)) for item in dictionary]
 
-q_list = ["".join(sorted(item)) for item in query]
 
-res=[]
-for q in q_list:
-    temp=[1 for d in dict_list if q==d ]
-    res.append(sum(temp))
-print(res)
+# dictionary = ['hack', 'a', 'rank', 'khac', 'ackh', 'kran', 'rankhacker', 'a', 'ab', 'ba', 'stairs', 'raits']
+# query = ["a", "nark", "bs", "hack", "stair"]
+
+# dict_list = ["".join(sorted(item)) for item in dictionary]
+
+# q_list = ["".join(sorted(item)) for item in query]
+
+# res=dict.fromkeys(q_list,0)
+# for q in dict_list:
+#     res[q] += 1
+# print(res.values)
+
+# from collections import deque
+
+# s=deque([1,2,3,4,5])
+# print(type(s[0]))
+
+with open('code-time/file.txt') as f:
+    A = set(f.readline().split())
+    res="True"  
+    for _ in range(int(f.readline())):
+        B = set(f.readline().split())
+        if not (B.intersection(A)==B and len(A)>len(B)):
+            res="False"
+    print("False") 
